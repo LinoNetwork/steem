@@ -150,7 +150,7 @@ void database::reindex( const fc::path& data_dir, const fc::path& shared_mem_dir
    {
       ilog( "Reindexing Blockchain" );
       wipe( data_dir, shared_mem_dir, false );
-      open( data_dir, shared_mem_dir, 0, shared_file_size, chainbase::database::read_write );
+      open( data_dir, shared_mem_dir, STEEMIT_INIT_SUPPLY, shared_file_size, chainbase::database::read_write );
       _fork_db.reset();    // override effect of _fork_db.start_block() call in open()
 
       auto start = fc::time_point::now();
@@ -2392,6 +2392,7 @@ void database::init_genesis( uint64_t init_supply )
             a.name = STEEMIT_INIT_MINER_NAME + ( i ? fc::to_string( i ) : std::string() );
             a.memo_key = init_public_key;
             a.balance  = asset( i ? 0 : init_supply, STEEM_SYMBOL );
+            a.sbd_balance = asset( i ? 0 : STEEMIT_INIT_SBD_SUPPLY, SBD_SYMBOL );
          } );
 
          create< account_authority_object >( [&]( account_authority_object& auth )
@@ -2436,6 +2437,11 @@ void database::init_genesis( uint64_t init_supply )
       {
          wso.current_shuffled_witnesses[0] = STEEMIT_INIT_MINER_NAME;
       } );
+
+#if STEEMIT_INIT_HARDFORK != 0
+      set_hardfork( STEEMIT_INIT_HARDFORK, true );
+#endif
+
    }
    FC_CAPTURE_AND_RETHROW()
 }
