@@ -49,8 +49,8 @@
 #define STEEMIT_SYMBOL                          "STEEM"
 #define STEEMIT_ADDRESS_PREFIX                  "STX"
 
-#define STEEMIT_GENESIS_TIME                    (fc::time_point_sec(1484438400))
-#define STEEMIT_MINING_TIME                     (fc::time_point_sec(1484438400))
+#define STEEMIT_GENESIS_TIME                    (fc::time_point_sec(1504224000))
+#define STEEMIT_MINING_TIME                     (fc::time_point_sec(1504224000))
 #define STEEMIT_CASHOUT_WINDOW_SECONDS_PRE_HF12 (60*60) /// 1 hour
 #define STEEMIT_CASHOUT_WINDOW_SECONDS_PRE_HF17 (60*60) /// 1 hour
 #define STEEMIT_CASHOUT_WINDOW_SECONDS          (60*60) /// 1 hour
@@ -90,7 +90,7 @@
 #define STEEMIT_MAX_MINER_WITNESSES_HF17        0
 #define STEEMIT_MAX_RUNNER_WITNESSES_HF17       1
 
-#define STEEMIT_HARDFORK_REQUIRED_WITNESSES     17 // 17 of the 21 dpos witnesses (20 elected and 1 virtual time) required for hardfork. This guarantees 75% participation on all subsequent rounds.
+#define STEEMIT_HARDFORK_REQUIRED_WITNESSES     2 // 17 of the 21 dpos witnesses (20 elected and 1 virtual time) required for hardfork. This guarantees 75% participation on all subsequent rounds.
 #define STEEMIT_MAX_TIME_UNTIL_EXPIRATION       (60*60) // seconds,  aka: 1 hour
 #define STEEMIT_MAX_MEMO_SIZE                   2048
 #define STEEMIT_MAX_PROXY_RECURSION_DEPTH       4
@@ -221,7 +221,7 @@
 #define STEEMIT_MAX_SIG_CHECK_DEPTH             2
 
 // Hardfork to apply when creating a new chain
-#define STEEMIT_INIT_HARDFORK                   18
+#define STEEMIT_INIT_HARDFORK                   19
 
 #define STEEMIT_MIN_TRANSACTION_SIZE_LIMIT      1024
 #define STEEMIT_SECONDS_PER_YEAR                (uint64_t(60*60*24*365ll))
