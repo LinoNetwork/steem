@@ -41,7 +41,7 @@
 #else // IS LIVE STEEM NETWORK
 
 #define STEEMIT_INIT_PUBLIC_KEY_STR             "STX8hfpbPWX551MLzDYdr8XCG41xDet9LPzK8G6qyEAwndHAKpzP1"
-#define STEEMIT_CHAIN_ID                        (fc::sha256::hash("lino"))
+#define STEEMIT_CHAIN_ID                        (fc::sha256::hash("linotest"))
 #define VESTS_SYMBOL  (uint64_t(6) | (uint64_t('V') << 8) | (uint64_t('E') << 16) | (uint64_t('S') << 24) | (uint64_t('T') << 32) | (uint64_t('S') << 40)) ///< VESTS with 6 digits of precision
 #define STEEM_SYMBOL  (uint64_t(3) | (uint64_t('S') << 8) | (uint64_t('T') << 16) | (uint64_t('E') << 24) | (uint64_t('E') << 32) | (uint64_t('M') << 40)) ///< STEEM with 3 digits of precision
 #define SBD_SYMBOL    (uint64_t(3) | (uint64_t('S') << 8) | (uint64_t('B') << 16) | (uint64_t('D') << 24) ) ///< STEEM Backed Dollars with 3 digits of precision
